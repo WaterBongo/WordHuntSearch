@@ -14,8 +14,9 @@ directions = [(-1, 0), (1, 0), (0, -1), (0, 1),
 def is_valid_extension(x, y, used):
     max_row = len(word_square)
     max_col = len(word_square[0])
-    return 0 <= x < max_row and 0 <= y < max_col and (x, y) not in used
-
+    if 0 <= x < max_row and 0 <= y < max_col and (x, y) not in used:
+        return True
+    return False    
 def check_valid_words(word_dict):
     valid_words = []
     for letter_combo in word_dict:
@@ -53,18 +54,20 @@ def delete_words(word_dict):
 
 def looped_search_stacked(x, y, combo, word, used):
     new_used = used[:]
+    found = False
+    if word == combo:
+        valid_wrds.append([word, new_used])
+        found = True
     for dx, dy in directions:
         new_x = x + dx
         new_y = y + dy
         if is_valid_extension(new_x, new_y, used):
             new_str = combo + word_square[new_x][new_y]
-            #no wkre
             if word.startswith(new_str):
                 new_used.append((new_x, new_y))
-                if word == new_str:
-                    valid_wrds.append([word, new_used])
-                    break
-                looped_search_stacked(new_x, new_y, new_str, word, new_used)
+                found = looped_search_stacked(new_x, new_y, new_str, word, new_used) or found
+                new_used.pop()
+    return found
 
 
 #finis the function
@@ -120,10 +123,10 @@ three_letter_dict = create_extra_letter_dict(word_dict)
 delete_words(three_letter_dict)
 valid_wrds.extend(check_valid_words(three_letter_dict))
 
-
 four_letter_dict = create_extra_letter_dict(three_letter_dict)
 delete_words(four_letter_dict)
 valid_wrds.extend(check_valid_words(four_letter_dict))
+
 
 
 for four_Letter_combo in four_letter_dict:
