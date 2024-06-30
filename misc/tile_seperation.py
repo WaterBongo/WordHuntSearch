@@ -39,4 +39,4 @@ def split_tiles(image_path, num_tiles_x=4, num_tiles_y=4):
     print(f"Total {len(tiles)} tiles extracted and saved.")
 
 # Example usage:
-split_tiles("cropped_letters.png")
+split_tiles("./screens.png")

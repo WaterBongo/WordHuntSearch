@@ -34,13 +34,13 @@ def get_window_bounds(app_name):
     
     return x, y, width, height
 
-bounds = get_window_bounds("Bezel")
+bounds = get_window_bounds("iPhone Mirroring")
 if bounds:
     x, y, width, height = bounds
     print(f"Window found at ({x}, {y}) with size {width}x{height}")
 
     # Activate the window with the provided name
-    subprocess.run(['/usr/bin/osascript', '-e', f'tell app "Bezel" to activate'])
+    subprocess.run(['/usr/bin/osascript', '-e', f'tell app "iPhone Mirroring" to activate'])
 
     time.sleep(1)  # Give it a second to focus on the window
 

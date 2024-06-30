@@ -5,7 +5,7 @@ word_string = input("Enter the word square: ")
 word_square = [list(word_string[i:i+4]) for i in range(0, len(word_string), 4)]
 with open('board.txt', 'w') as f:
     f.write(word_string)
-with open('wordlist2.txt','r') as f:
+with open('wordlist.txt','r') as f:
     Inital_wordlist = set(f.read().split("\n"))
 
 directions = [(-1, 0), (1, 0), (0, -1), (0, 1), 
@@ -17,13 +17,14 @@ def is_valid_extension(x, y, used):
     if 0 <= x < max_row and 0 <= y < max_col and (x, y) not in used:
         return True
     return False    
+
 def check_valid_words(word_dict):
-    valid_words = []
+    valide_words = []
     for letter_combo in word_dict:
         for word in word_dict[letter_combo]['possible_words']:
             if word == letter_combo:
-                valid_words.append([word, word_dict[letter_combo]['used_cordinates']])
-    return valid_words  
+                valide_words.append([word, word_dict[letter_combo]['used_cordinates']])
+    return valide_words  
 
 
 def remove_duplicates(words_list : list):
@@ -99,9 +100,12 @@ def create_extra_letter_dict(word_dict):
 
 
 start_time = time.time()
+
 all_combinations = []
+
 for i in range(len(word_square)):
     for j in range(len(word_square[i])):
+
         combinations = get_touching_combinations(i, j)
         all_combinations.extend(combinations)
 
@@ -139,7 +143,7 @@ for four_Letter_combo in four_letter_dict:
 
 valid_wrds.sort(key=lambda x: len(x[0]), reverse=True)
 valid_wrds = remove_duplicates(valid_wrds)
-filz = open('oute.txt','w')
+filz = open('out.txt','w')
 for wrd in valid_wrds:
     filz.write(str(wrd) + "\n")
 filz.close()
