@@ -23,10 +23,12 @@ You are given 1-2 minutes with a random 4x4 grid of letters, and you drag to con
 
 1. The script initially accepts a string input representing the word square, which it then converts into a 2D list (word_square) for easier manipulation.
 It reads a list of valid words from wordlist.txt and stores them in a set (Inital_wordlist) for quick lookups.
-Direction Definitions:
+
+### Direction Definitions
 
 A list of tuples named directions defines the possible movements from any letter in the grid: vertically, horizontally, and diagonally adjacent positions.
-Utility Functions:
+
+### Utility Functions
 
 is_valid_extension(x, y, used): Checks if a new position is within the grid bounds and not already used in the current word being formed.
 check_valid_words(word_dict): Filters out valid words from a dictionary that maps letter combinations to their possible continuations and used coordinates.
@@ -36,17 +38,18 @@ delete_words(word_dict): Removes entries from a dictionary where no valid word c
 looped_search_stacked(x, y, combo, word, used): Recursively searches for longer words starting with a given combination, marking used positions to avoid repetition.
 Word Search Initialization:
 
-The script generates all valid two-letter combinations from the grid and initializes a dictionary (word_dict) mapping these combinations to their possible word continuations and used coordinates.
+2. The script generates all valid two-letter combinations from the grid and initializes a dictionary (word_dict) mapping these combinations to their possible word continuations and used coordinates.
 Word Extension:
 
-Using create_extra_letter_dict(word_dict), the script extends valid two-letter combinations to longer ones by checking adjacent letters and updating the dictionary with new combinations, possible words, and used coordinates.
+3. Using create_extra_letter_dict(word_dict), the script extends valid two-letter combinations to longer ones by checking adjacent letters and updating the dictionary with new combinations, possible words, and used coordinates.
 Valid Word Identification:
 
-The script iterates through the extended combinations, filtering out valid words using check_valid_words and storing them in valid_wrds.
+4. The script iterates through the extended combinations, filtering out valid words using check_valid_words and storing them in valid_wrds.
 Recursive Search for Longer Words:
 
-For each four-letter combination, looped_search_stacked is called to recursively search for and add longer valid words to valid_wrds.
-Output and Cleanup:
+5. For each four-letter combination, looped_search_stacked is called to recursively search for and add longer valid words to valid_wrds.
+
+### Output and Cleanup:
 
 The list of valid words (valid_wrds) is sorted by length in descending order, duplicates are removed, and the results are written to out.txt.
 The script prints the total time taken to execute.
