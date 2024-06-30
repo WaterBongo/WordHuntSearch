@@ -2,6 +2,8 @@
 
 WordHuntSearch is a tool that is used to find all the words that is possible from the game pigeon game wordhunt!
 
+P.S I understanding that using trie would be a more efficient way to solve this problem, but I wanted to challenge myself and see if I could solve this problem without using a trie, but instead implimenting my own algorithm that is still efficient.
+
 ## What is wordhunt?
 
 You are given 1-2 minutes with a random 4x4 grid of letters, and you drag to connect the letters to make words, There are also some features / constrants that the user must abide by
