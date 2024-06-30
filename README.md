@@ -21,8 +21,7 @@ You are given 1-2 minutes with a random 4x4 grid of letters, and you drag to con
 
 ## How does WordHuntSearch work?
 
-
-The script initially accepts a string input representing the word square, which it then converts into a 2D list (word_square) for easier manipulation.
+1. The script initially accepts a string input representing the word square, which it then converts into a 2D list (word_square) for easier manipulation.
 It reads a list of valid words from wordlist.txt and stores them in a set (Inital_wordlist) for quick lookups.
 Direction Definitions:
 
