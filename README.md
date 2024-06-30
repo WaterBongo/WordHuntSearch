@@ -9,13 +9,14 @@ You are given 1-2 minutes with a random 4x4 grid of letters, and you drag to con
 
 <img src="./js/wordhunt.jpg" alt="drawing" width="200"/>
 
+(picture of wordhunt grid)
 
-## Features ❓❗
+## Game Features & Constraints ❓❗
 
-- Real-time traffic light detection
-- Audio notification when the light turns green
-- User-friendly mobile interface
-- effective as a dashcam
+- Words can only be used once
+- The longer the word, the more points you recieve
+- All words must be 3 letters or longer
+- The word must be able to be connected by the grid
 
 ## Tech Stack ✨
 
