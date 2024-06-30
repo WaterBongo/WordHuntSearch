@@ -30,12 +30,17 @@ A list of tuples named directions defines the possible movements from any letter
 
 ### Utility Functions
 
-is_valid_extension(x, y, used): Checks if a new position is within the grid bounds and not already used in the current word being formed.
-check_valid_words(word_dict): Filters out valid words from a dictionary that maps letter combinations to their possible continuations and used coordinates.
-remove_duplicates(words_list): Removes duplicate entries from a list of words.
-get_touching_combinations(x, y): Generates all valid two-letter combinations starting from a given position.
-delete_words(word_dict): Removes entries from a dictionary where no valid word continuations exist.
-looped_search_stacked(x, y, combo, word, used): Recursively searches for longer words starting with a given combination, marking used positions to avoid repetition.
+`is_valid_extension(x, y, used):` Checks if a new position is within the grid bounds and not already used in the current word being formed.
+
+`check_valid_words(word_dict):` Filters out valid words from a dictionary that maps letter combinations to their possible continuations and used coordinates.
+
+`remove_duplicates(words_list):` Removes duplicate entries from a list of words.
+
+`get_touching_combinations(x, y):` Generates all valid two-letter combinations starting from a given position.
+
+`delete_words(word_dict):` Removes entries from a dictionary where no valid word continuations exist.
+
+`looped_search_stacked(x, y, combo, word, used):` Recursively searches for longer words starting with a given combination, marking used positions to avoid repetition.
 Word Search Initialization:
 
 2. The script generates all valid two-letter combinations from the grid and initializes a dictionary (word_dict) mapping these combinations to their possible word continuations and used coordinates.
