@@ -57,7 +57,42 @@ Word Search Initialization:
 
 ## Usage
 
-TBD
+1. Clone the repository:
+
+```bash
+git clone https://github.com/WaterBongo/WordHuntSearch.git
+```
+
+2. Navigate to the project directory:
+
+```bash
+cd WordHuntSearch
+```
+
+3. Install the required dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+4. Run the Flask server:
+
+```bash
+python FlaskServer.py
+```
+
+5. Open the following URL in your browser:
+
+```localhost:5000```
+
+6. Run the python script and enter your wordhunt grid:
+
+```bash
+python main.py
+```
+
+7. Press next on the website!
+
 
 ## Contributing
 
