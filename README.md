@@ -5,7 +5,8 @@ WordHuntSearch is a tool that is used to find all the words that is possible fro
 ## What is wordhunt?
 
 You are given 1-2 minutes with a random 4x4 grid of letters, and you drag to connect the letters to make words. There are also some features / constrants that the user must abide by
-![wordhunt](./js/wordhunt.jpg)
+<img src="drawing.jpg" alt="drawing" width="200"/>
+
 example picture of grid
 
 ## Features ❓❗
